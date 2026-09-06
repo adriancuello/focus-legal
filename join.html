@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Focus — Invitación a la familia</title>
-  <meta name="description" content="Te invitaron a una familia en Focus. Abrí la app para unirte." />
-  <meta property="og:title" content="Invitación a Focus" />
-  <meta property="og:description" content="Te invitaron a unirte a una familia en Focus. Tocá para abrir la app." />
+  <title>Focus — Family invite</title>
+  <meta name="description" content="You were invited to a family on Focus. Open the app to join." />
+  <meta property="og:title" content="Focus family invite" />
+  <meta property="og:description" content="You were invited to join a family on Focus. Tap to open the app." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://adriancuello.github.io/focus-legal/join.html" />
   <meta name="twitter:card" content="summary" />
@@ -27,26 +27,54 @@
       font-family: ui-monospace, Menlo, monospace;
       background: #162033; border-radius: 12px; border: 1px solid #2a3a5c;
     }
-    a.btn, button.btn {
+    a.btn {
       display: block; width: 100%; box-sizing: border-box;
-      margin: 0.6rem 0; padding: 0.9rem 1rem; border: none; border-radius: 12px;
-      font-size: 1rem; font-weight: 600; text-decoration: none; cursor: pointer;
+      margin: 0.6rem 0; padding: 0.9rem 1rem; border-radius: 12px;
+      font-size: 1rem; font-weight: 600; text-decoration: none;
     }
-    a.primary, button.primary { background: #3b82f6; color: #fff; }
+    a.primary { background: #3b82f6; color: #fff; }
     a.secondary { background: #1c2940; color: #dbe7ff; }
     .hint { margin-top: 1.5rem; font-size: 0.85rem; color: #8b97b0; }
   </style>
 </head>
 <body>
-  <h1>Invitación a Focus</h1>
+  <h1 id="title">Invitación a Focus</h1>
   <p class="muted" id="subtitle">Te invitaron a unirte a una familia compartida.</p>
   <div class="code" id="codeDisplay">······</div>
   <a class="btn primary" id="openApp" href="#">Abrir Focus</a>
-  <a class="btn secondary" href="https://apps.apple.com/search?term=Focus%20aec.focusia">Buscar en App Store</a>
-  <p class="hint">Si ya tenés la app, tocá <strong>Abrir Focus</strong>. Si no se abre, copiá el código e ingresalo en Focus → Unirme con código.</p>
+  <a class="btn secondary" id="store" href="https://apps.apple.com/search?term=Focus%20aec.focusia">Buscar en App Store</a>
+  <p class="hint" id="hint">Si ya tenés la app, tocá <strong>Abrir Focus</strong>. Si no se abre, copiá el código e ingresalo en Focus → Unirme con código.</p>
 
   <script>
     (function () {
+      var es = (navigator.language || "en").toLowerCase().indexOf("es") === 0;
+      var t = es ? {
+        title: "Invitación a Focus",
+        subtitle: "Te invitaron a unirte a una familia compartida.",
+        open: "Abrir Focus",
+        store: "Buscar en App Store",
+        hint: "Si ya tenés la app, tocá <strong>Abrir Focus</strong>. Si no se abre, copiá el código e ingresalo en Focus → Unirme con código.",
+        noCode: "Sin código",
+        missing: "Falta el código de invitación en el enlace.",
+        docTitle: "Focus — Código "
+      } : {
+        title: "Focus invite",
+        subtitle: "You were invited to join a shared family.",
+        open: "Open Focus",
+        store: "Search on the App Store",
+        hint: "If you already have the app, tap <strong>Open Focus</strong>. If it doesn’t open, copy the code and enter it in Focus → Join with code.",
+        noCode: "No code",
+        missing: "The invite link is missing a code.",
+        docTitle: "Focus — Code "
+      };
+
+      document.documentElement.lang = es ? "es" : "en";
+      document.getElementById("title").textContent = t.title;
+      document.getElementById("subtitle").textContent = t.subtitle;
+      document.getElementById("openApp").textContent = t.open;
+      document.getElementById("store").textContent = t.store;
+      document.getElementById("hint").innerHTML = t.hint;
+
       var params = new URLSearchParams(window.location.search);
       var code = (params.get("code") || "").trim().toUpperCase();
       var codeEl = document.getElementById("codeDisplay");
@@ -55,24 +83,14 @@
 
       if (code) {
         codeEl.textContent = code;
-        document.title = "Focus — Código " + code;
+        document.title = t.docTitle + code;
       } else {
-        codeEl.textContent = "Sin código";
-        document.getElementById("subtitle").textContent =
-          "Falta el código de invitación en el enlace.";
+        codeEl.textContent = t.noCode;
+        document.getElementById("subtitle").textContent = t.missing;
       }
 
       openBtn.href = deep;
-
-      function tryOpen() {
-        if (!code) return;
-        window.location.href = deep;
-      }
-
-      // Intento automático al abrir el link desde WhatsApp / Safari
-      if (code) {
-        setTimeout(tryOpen, 400);
-      }
+      if (code) setTimeout(function () { window.location.href = deep; }, 400);
     })();
   </script>
 </body>
