@@ -5,11 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Focus — Política de privacidad</title>
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, sans-serif; max-width: 720px; margin: 2rem auto; padding: 0 1rem; line-height: 1.5; color: #111; }
-    h1 { font-size: 1.6rem; }
-    h2 { font-size: 1.1rem; margin-top: 1.6rem; }
-    .muted { color: #666; font-size: 0.9rem; }
-    nav a { color: #0b57d0; margin-right: 1rem; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 740px; margin: 2rem auto; padding: 0 1.1rem 3rem; line-height: 1.55; color: #111; }
+    h1 { font-size: 1.7rem; margin-bottom: 0.35rem; }
+    h2 { font-size: 1.15rem; margin-top: 1.75rem; margin-bottom: 0.5rem; }
+    h3 { font-size: 1rem; margin-top: 1.1rem; margin-bottom: 0.35rem; }
+    .muted { color: #666; font-size: 0.92rem; }
+    nav { margin-bottom: 1.25rem; font-size: 0.95rem; }
+    nav a { color: #0b57d0; margin-right: 1rem; text-decoration: none; }
+    nav a:hover { text-decoration: underline; }
+    ul, ol { padding-left: 1.25rem; }
+    li { margin: 0.35rem 0; }
+    .box { background: #f6f7f9; border-radius: 10px; padding: 0.9rem 1rem; margin: 1rem 0; }
+    hr { border: none; border-top: 1px solid #e5e5e5; margin: 2rem 0; }
   </style>
 </head>
 <body>
@@ -17,29 +24,149 @@
     <a href="index.html">Inicio</a>
     <a href="terms.html">Términos de uso</a>
   </nav>
+
   <h1>Política de privacidad — Focus</h1>
-  <p class="muted">Última actualización: septiembre 2026 · Bundle ID: aec.focusia</p>
-  <p>Focus (“la app”) es una app de organización familiar. Esta política describe qué datos tratamos.</p>
+  <p class="muted">Última actualización: 6 de septiembre de 2026 · App: Focus · Bundle ID: <code>aec.focusia</code></p>
 
-  <h2>Datos que tratamos</h2>
-  <p>Cuenta (email / identificador de Apple o Google), datos de familia (nombres, agenda, notas, documentos), texto o transcripción de voz enviados al asistente, y estado de suscripción. No vendemos tus datos.</p>
+  <p>Esta Política de privacidad describe cómo el desarrollador de Focus (“nosotros”, “la app”) recopila, usa, almacena, comparte y elimina información personal cuando usás Focus en iPhone. Al crear una cuenta, unirte a una familia o usar funciones que envían datos a nuestros proveedores, aceptás el tratamiento descrito aquí. Si no estás de acuerdo, no uses la app o eliminá tu cuenta.</p>
 
-  <h2>Asistente de IA</h2>
-  <p>Al dictar o chatear, el texto se envía a proveedores de IA configurados solo para interpretar la intención y organizar la agenda. El envío ocurre cuando vos actuás (enviar o terminar un dictado).</p>
+  <div class="box">
+    <strong>Resumen rápido:</strong> Focus guarda datos de cuenta y de organización familiar para sincronizar la agenda entre integrantes. El texto que dictás o escribís al asistente puede enviarse a un proveedor de IA solo cuando vos lo activás. No vendemos tus datos. Podés borrar datos o eliminar la cuenta desde Ajustes.
+  </div>
 
-  <h2>Terceros</h2>
-  <p>Sincronización: Supabase. Compras: Apple y RevenueCat. Login: Sign in with Apple y/o Google.</p>
+  <h2>1. Responsable del tratamiento</h2>
+  <p>El responsable del tratamiento de los datos personales tratados a través de Focus es el desarrollador publicado en la ficha de la app en App Store (Bundle ID <code>aec.focusia</code>). Para consultas de privacidad usá el email de contacto de esa ficha o, si está configurado, la opción <em>Contactar soporte</em> dentro de Ajustes.</p>
 
-  <h2>Permisos</h2>
-  <p>Micrófono/voz, cámara/fotos, calendario (opcional), ubicación al usar (clima), notificaciones (si las activás). Podés revocarlos en Ajustes del sistema.</p>
+  <h2>2. Ámbito</h2>
+  <p>Esta política aplica a:</p>
+  <ul>
+    <li>la aplicación móvil Focus para iOS;</li>
+    <li>el backend de sincronización asociado a la app;</li>
+    <li>funciones de autenticación, suscripciones, asistente de IA, bóveda de documentos y permisos del dispositivo.</li>
+  </ul>
+  <p>No controlamos sitios o servicios de terceros a los que la app pueda enlazar (por ejemplo, páginas de Apple para administrar suscripciones). Esos servicios tienen sus propias políticas.</p>
 
-  <h2>Eliminación</h2>
-  <p>Podés borrar datos o eliminar tu cuenta desde Ajustes → Eliminar datos → Eliminar cuenta. Las suscripciones de Apple se gestionan en Ajustes del sistema.</p>
+  <h2>3. Datos que tratamos</h2>
+  <p>Según cómo uses Focus, podemos tratar las siguientes categorías:</p>
 
-  <h2>Contacto</h2>
-  <p>Consultas de privacidad: el email de contacto del desarrollador en la ficha de App Store.</p>
+  <h3>3.1 Datos de cuenta e identificación</h3>
+  <ul>
+    <li>Identificador de usuario generado por el proveedor de autenticación.</li>
+    <li>Email u otros datos que Apple o Google compartan al iniciar sesión (según las opciones que elijas en Sign in with Apple / Google; con Apple podés ocultar el email).</li>
+    <li>Tokens de sesión necesarios para mantenerte autenticado.</li>
+  </ul>
 
+  <h3>3.2 Datos de familia y contenido que cargás</h3>
+  <ul>
+    <li>Nombre de la familia y código de invitación.</li>
+    <li>Perfiles de integrantes (nombre, foto si la añadís, color u otros datos de perfil).</li>
+    <li>Eventos y tareas de la agenda (títulos, fechas, notas, asignación a integrantes).</li>
+    <li>Notas adhesivas / sticky notes.</li>
+    <li>Documentos de la bóveda (imágenes u otros archivos que subas) y metadatos asociados.</li>
+    <li>Historial de mensajes del chat con el asistente, cuando lo usás.</li>
+  </ul>
+
+  <h3>3.3 Datos del asistente de voz e IA</h3>
+  <ul>
+    <li>Audio capturado por el micrófono mientras dictás (procesado en el dispositivo para reconocimiento de voz según el sistema de Apple).</li>
+    <li>Texto transcrito o escrito que enviás al asistente.</li>
+    <li>Respuestas e instrucciones generadas para crear o editar ítems de la agenda.</li>
+  </ul>
+  <p>El envío a proveedores de IA ocurre solo cuando vos actuás (por ejemplo, terminás un dictado o enviás un mensaje), no de forma continua en segundo plano.</p>
+
+  <h3>3.4 Datos de suscripción y compras</h3>
+  <ul>
+    <li>Estado de suscripción Free / Focus PRO.</li>
+    <li>Identificadores de compra y entitlement gestionados por Apple y, en su caso, RevenueCat (sin que nosotros veamos tu número completo de tarjeta).</li>
+    <li>Contadores de uso vinculados a límites del plan (por ejemplo, usos de IA o documentos), necesarios para aplicar el plan Free y la política de uso justo de PRO.</li>
+  </ul>
+
+  <h3>3.5 Datos técnicos y de dispositivo</h3>
+  <ul>
+    <li>Información básica del dispositivo y del sistema operativo que el SO o los SDKs puedan necesitar para funcionar.</li>
+    <li>Preferencias locales (idioma de la app, recordatorios, sync de calendario, flags de onboarding).</li>
+    <li>Registros de error o diagnóstico que el sistema o nuestros proveedores generen al fallar una operación (en la medida en que estén habilitados).</li>
+  </ul>
+
+  <h3>3.6 Datos opcionales vía permisos de iOS</h3>
+  <ul>
+    <li><strong>Micrófono / reconocimiento de voz:</strong> dictado.</li>
+    <li><strong>Cámara / fotos:</strong> escanear o guardar documentos en la bóveda.</li>
+    <li><strong>Calendarios:</strong> sincronizar eventos con el Calendario de iOS si lo activás.</li>
+    <li><strong>Ubicación al usar la app:</strong> mostrar clima en la agenda (si lo permitís).</li>
+    <li><strong>Notificaciones:</strong> recordatorios de eventos si los configurás.</li>
+  </ul>
+  <p>Podés denegar o revocar estos permisos en Ajustes de iOS. Algunas funciones dejarán de estar disponibles.</p>
+
+  <h3>3.7 Modo “Explorar sin cuenta”</h3>
+  <p>Si usás la opción de explorar sin iniciar sesión, los datos quedan principalmente en el dispositivo y no se sincronizan con el backend de familia. No hay cuenta en la nube que eliminar; podés borrar datos locales desde Ajustes.</p>
+
+  <h2>4. Finalidades del tratamiento</h2>
+  <p>Usamos los datos para:</p>
+  <ol>
+    <li>crear y autenticar tu cuenta;</li>
+    <li>permitir crear, unirte y gestionar una familia compartida;</li>
+    <li>sincronizar agenda, notas, perfiles y bóveda entre dispositivos e integrantes autorizados;</li>
+    <li>interpretar dictados y mensajes del asistente para ayudarte a organizar la agenda;</li>
+    <li>aplicar límites del plan Free y la política de uso justo de Focus PRO;</li>
+    <li>procesar y restaurar compras vía Apple / RevenueCat;</li>
+    <li>mostrar clima, recordatorios o sync de calendario cuando lo habilitás;</li>
+    <li>brindar soporte, prevenir abuso y mejorar la seguridad del servicio;</li>
+    <li>cumplir obligaciones legales aplicables.</li>
+  </ol>
+  <p><strong>No vendemos datos personales.</strong> No usamos el contenido de tu familia para entrenar modelos de IA propios con fines publicitarios.</p>
+
+  <h2>5. Base del tratamiento</h2>
+  <p>Según tu jurisdicción, el tratamiento se basa en una o más de estas bases: ejecución del contrato (prestarte el servicio que pediste), tu consentimiento (permisos del dispositivo, envío voluntario de texto a IA, ciertos datos opcionales), interés legítimo (seguridad, prevención de abuso, mejora operativa limitada) y obligaciones legales cuando correspondan.</p>
+
+  <h2>6. Con quién compartimos datos</h2>
+  <p>Compartimos datos solo con proveedores necesarios para operar Focus, bajo sus propias condiciones:</p>
+  <ul>
+    <li><strong>Supabase:</strong> autenticación, base de datos y sincronización de contenido familiar.</li>
+    <li><strong>Apple:</strong> Sign in with Apple, In-App Purchases, reconocimiento de voz / permisos del sistema, App Store.</li>
+    <li><strong>Google:</strong> si elegís Continuar con Google (Google Sign-In / OAuth).</li>
+    <li><strong>RevenueCat:</strong> estado de suscripciones y entitlements.</li>
+    <li><strong>Proveedores de IA</strong> (p. ej. OpenAI o Google Gemini, según configuración): texto/transcripción que enviás al asistente, para generar respuestas e instrucciones de organización.</li>
+  </ul>
+  <p>También podemos divulgar información si la ley lo exige, o para proteger derechos, seguridad e integridad del servicio o de los usuarios, en la medida permitida.</p>
+  <p>Los integrantes de tu familia con acceso verán el contenido compartido de esa familia (agenda, notas, bóveda, perfiles). Sos responsable de a quién le das el código de invitación.</p>
+
+  <h2>7. Transferencias internacionales</h2>
+  <p>Nuestros proveedores pueden procesar datos en servidores ubicados fuera de tu país (por ejemplo, Estados Unidos u otras regiones). Al usar Focus entendés que esos tratamientos pueden implicar transferencias internacionales sujetas a las salvaguardas de cada proveedor.</p>
+
+  <h2>8. Conservación</h2>
+  <p>Conservamos los datos mientras tu cuenta esté activa y sea necesario para prestar el servicio. Si eliminás la cuenta, borramos o desvinculamos tu usuario y, según la configuración del backend, los datos de familia de los que seas titular / que correspondan al flujo de eliminación. Pueden quedar copias residuales en respaldos por un período limitado por motivos de seguridad y continuidad, hasta su rotación.</p>
+  <p>Los contadores de uso mensual de IA se reinician según el ciclo de calendario implementado en la app. Las preferencias locales pueden permanecer en el dispositivo hasta que desinstales la app o limpies datos.</p>
+
+  <h2>9. Seguridad</h2>
+  <p>Aplicamos medidas razonables de seguridad técnicas y organizativas (acceso autenticado, comunicación cifrada en tránsito con los servicios, controles de acceso a la familia). Ningún sistema es 100&nbsp;% seguro: no podés asumir ausencia total de riesgo. Evitá cargar en la bóveda o dictar al asistente información altamente sensible (contraseñas, datos médicos detallados, números de tarjetas, etc.) si no es estrictamente necesario.</p>
+
+  <h2>10. Menores</h2>
+  <p>Focus está pensada como organizador familiar. El titular de la cuenta de App Store / de la cuenta de Focus debe tener capacidad legal para aceptar estos términos y, si hay menores en la familia, ser responsable del uso que hagan y del contenido que se cargue sobre ellos. No dirigimos Focus a niños de forma independiente para recopilar sus datos sin un adulto responsable.</p>
+
+  <h2>11. Tus derechos y controles</h2>
+  <p>Según la ley aplicable, podés tener derecho a acceder, rectificar, actualizar, limitar, oponerte o solicitar la eliminación de datos personales. En la práctica, dentro de Focus podés:</p>
+  <ul>
+    <li>editar perfiles, eventos, notas y documentos;</li>
+    <li>usar <strong>Ajustes → Eliminar datos → Eliminar todos los datos</strong> para borrar contenido familiar según esa función;</li>
+    <li>usar <strong>Ajustes → Eliminar datos → Eliminar cuenta</strong> para solicitar la eliminación permanente de tu cuenta (cuando hay sesión iniciada);</li>
+    <li>cerrar sesión, revocar permisos del sistema y administrar o cancelar suscripciones en Ajustes de Apple → Suscripciones;</li>
+    <li>contactarnos por el canal de soporte / email del desarrollador en App Store.</li>
+  </ul>
+  <p>Las compras y reembolsos de Apple se rigen por las políticas de Apple; eliminar la cuenta de Focus no cancela automáticamente una suscripción de Apple.</p>
+
+  <h2>12. Sin venta ni publicidad basada en tu contenido familiar</h2>
+  <p>No vendemos tu información personal. No usamos el contenido de tu agenda familiar para mostrarte publicidad de terceros basada en ese contenido.</p>
+
+  <h2>13. Cambios a esta política</h2>
+  <p>Podemos actualizar esta Política de privacidad. La fecha de “Última actualización” al inicio indica la versión vigente. Si los cambios son relevantes, procuraremos avisar en la app o en la ficha de App Store cuando sea razonable. El uso continuado después de la actualización implica aceptación de la nueva versión, salvo que la ley exija otro consentimiento.</p>
+
+  <h2>14. Contacto</h2>
+  <p>Para ejercer derechos o hacer consultas de privacidad: email de contacto del desarrollador en la ficha de Focus en App Store, o <em>Ajustes → Contactar soporte</em> / <em>Reportar contenido</em> si aparecen en tu versión.</p>
+
+  <hr />
   <h2>English summary</h2>
-  <p>Focus processes account, family organizer content, optional voice/chat text for AI assistance, and subscription status. No sale of personal data. AI runs only on user action. Contact the App Store listing developer email for privacy requests.</p>
+  <p class="muted">This English text is a convenience summary. The Spanish version above is the primary reference for this page.</p>
+  <p>Focus is a family organizer app (bundle <code>aec.focusia</code>). We process account identifiers (Apple/Google), family content (events, notes, vault files, member profiles), optional voice/chat text sent to AI providers only on your action, subscription status (Apple/RevenueCat), and optional device permissions data (mic, camera/photos, calendars, location-when-in-use, notifications). Data is synced via our backend (Supabase) so invited family members can share the same organizer. We do not sell personal data. You can delete family data or your account in Settings → Delete data. Apple subscriptions are managed separately in iOS Settings. Explore-without-account mode stays mostly on-device. Contact the developer email on the App Store listing for privacy requests.</p>
 </body>
 </html>
