@@ -4,59 +4,107 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Focus — Support</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Sora:wght@600;700&display=swap" rel="stylesheet" />
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 740px; margin: 2rem auto; padding: 0 1.1rem 3rem; line-height: 1.55; color: #111; }
-    h1 { font-size: 1.7rem; margin-bottom: 0.35rem; }
-    h2 { font-size: 1.15rem; margin-top: 1.75rem; margin-bottom: 0.5rem; }
-    .muted { color: #666; font-size: 0.92rem; }
-    nav { margin-bottom: 1.25rem; font-size: 0.95rem; }
-    nav a { color: #0b57d0; margin-right: 1rem; text-decoration: none; }
-    nav a:hover { text-decoration: underline; }
-    ul { padding-left: 1.25rem; }
-    li { margin: 0.45rem 0; }
-    .box { background: #f6f7f9; border-radius: 10px; padding: 0.9rem 1rem; margin: 1rem 0; }
-    a.mail { font-weight: 600; color: #0b57d0; }
-    hr { border: none; border-top: 1px solid #e5e5e5; margin: 2rem 0; }
+    :root {
+      --bg0: #0a0d14;
+      --bg1: #10162a;
+      --card: rgba(255, 255, 255, 0.05);
+      --card-border: rgba(255, 255, 255, 0.1);
+      --text: #f4f7ff;
+      --muted: rgba(244, 247, 255, 0.58);
+      --blue: #00bfff;
+      --violet: #8c59ff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Figtree", system-ui, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(900px 500px at 10% -10%, rgba(0, 191, 255, 0.22), transparent 55%),
+        radial-gradient(700px 420px at 100% 0%, rgba(140, 89, 255, 0.18), transparent 50%),
+        linear-gradient(165deg, var(--bg1), var(--bg0) 55%);
+      line-height: 1.55;
+    }
+    .wrap { width: min(760px, calc(100% - 2rem)); margin: 0 auto; padding: 1.5rem 0 3.5rem; }
+    .topnav { display: flex; flex-wrap: wrap; gap: 0.35rem 1rem; align-items: center; justify-content: space-between; margin-bottom: 2rem; }
+    .brand { display: inline-flex; align-items: center; gap: 0.55rem; text-decoration: none; color: var(--text); font-family: "Sora", sans-serif; font-weight: 700; letter-spacing: -0.02em; }
+    .brand-mark { width: 1.7rem; height: 1.7rem; border-radius: 0.5rem; background: linear-gradient(135deg, var(--blue), var(--violet)); display: grid; place-items: center; font-size: 0.85rem; box-shadow: 0 0 24px rgba(0, 191, 255, 0.35); }
+    .links { display: flex; flex-wrap: wrap; gap: 0.85rem; }
+    .links a { color: var(--muted); text-decoration: none; font-size: 0.92rem; font-weight: 500; }
+    .links a:hover { color: var(--blue); }
+    .eyebrow { display: inline-flex; padding: 0.3rem 0.7rem; border-radius: 999px; background: rgba(0, 191, 255, 0.12); border: 1px solid rgba(0, 191, 255, 0.28); color: var(--blue); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 0.9rem; }
+    h1 { font-family: "Sora", sans-serif; font-size: clamp(1.85rem, 5vw, 2.55rem); line-height: 1.12; letter-spacing: -0.03em; margin: 0 0 0.65rem; }
+    .lede { margin: 0; color: var(--muted); font-size: 1.05rem; max-width: 36rem; }
+    .contact { margin: 1.6rem 0 2rem; padding: 1.25rem 1.35rem; border-radius: 1.15rem; background: linear-gradient(135deg, rgba(0, 191, 255, 0.14), rgba(140, 89, 255, 0.1)), var(--card); border: 1px solid var(--card-border); display: grid; gap: 0.85rem; }
+    .contact strong { display: block; font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.35rem; }
+    .mail { display: inline-flex; color: var(--text); text-decoration: none; font-weight: 700; font-size: 1.15rem; }
+    .mail:hover { color: var(--blue); }
+    .cta { justify-self: start; display: inline-flex; padding: 0.7rem 1.05rem; border-radius: 999px; background: linear-gradient(135deg, var(--blue), #4f7cff 45%, var(--violet)); color: #061018; font-weight: 700; text-decoration: none; box-shadow: 0 10px 30px rgba(0, 191, 255, 0.25); }
+    .cta:hover { filter: brightness(1.06); }
+    .hint { margin: 0; color: var(--muted); font-size: 0.92rem; }
+    h2 { font-family: "Sora", sans-serif; font-size: 1.15rem; letter-spacing: -0.02em; margin: 0 0 0.9rem; }
+    .faq { display: grid; gap: 0.7rem; margin: 0 0 2rem; padding: 0; list-style: none; }
+    .faq li { padding: 1rem 1.1rem; border-radius: 1rem; background: var(--card); border: 1px solid var(--card-border); }
+    .faq li strong { display: block; margin-bottom: 0.3rem; }
+    .faq li span { color: var(--muted); font-size: 0.94rem; }
+    .legal-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0.75rem; margin-bottom: 2rem; }
+    .legal-row a { display: block; padding: 1rem 1.1rem; border-radius: 1rem; background: var(--card); border: 1px solid var(--card-border); color: var(--text); text-decoration: none; font-weight: 600; }
+    .legal-row a:hover { border-color: rgba(0, 191, 255, 0.45); }
+    .legal-row a small { display: block; margin-top: 0.25rem; color: var(--muted); font-weight: 500; font-size: 0.82rem; }
+    footer { color: var(--muted); font-size: 0.88rem; border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 1.25rem; }
+    code { font-size: 0.85em; padding: 0.1rem 0.35rem; border-radius: 0.35rem; background: rgba(255, 255, 255, 0.08); }
   </style>
 </head>
 <body>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="privacy-en.html">Privacy</a>
-    <a href="terms-en.html">Terms</a>
-    <a href="support.html">Español</a>
-  </nav>
+  <div class="wrap">
+    <header class="topnav">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">✦</span> Focus</a>
+      <nav class="links" aria-label="Primary">
+        <a href="privacy-en.html">Privacy</a>
+        <a href="terms-en.html">Terms</a>
+        <a href="join.html">Join</a>
+        <a href="support.html">Español</a>
+      </nav>
+    </header>
 
-  <h1>Support — Focus</h1>
-  <p class="muted">Family organizer for iPhone · Bundle ID: <code>aec.focusia</code> · Updated: September 2026</p>
+    <section class="hero">
+      <div class="eyebrow">Support</div>
+      <h1>We’re here to help</h1>
+      <p class="lede">Questions about the app, your shared family, Focus PRO, or your account. We reply on business days.</p>
+    </section>
 
-  <div class="box">
-    <p style="margin:0 0 0.5rem 0;"><strong>Contact</strong></p>
-    <p style="margin:0;">Email us at
-      <a class="mail" href="mailto:aecdrianc@gmail.com?subject=Focus%20support">aecdrianc@gmail.com</a>
-      (or in the app: <em>Settings → Contact support</em>).
-    </p>
+    <section class="contact" aria-label="Contact">
+      <div>
+        <strong>Email</strong>
+        <a class="mail" href="mailto:aecdrianc@gmail.com?subject=Focus%20support">aecdrianc@gmail.com</a>
+      </div>
+      <a class="cta" href="mailto:aecdrianc@gmail.com?subject=Focus%20support">Email support</a>
+      <p class="hint">Also in the app: <em>Settings → Contact support</em>. We’ll never ask for your Apple ID password or verification codes by email.</p>
+    </section>
+
+    <h2>FAQ</h2>
+    <ul class="faq">
+      <li><strong>How do I sign in?</strong><span>Apple or Google only. Focus has no separate username/password.</span></li>
+      <li><strong>How do I invite family?</strong><span>In Settings, share the invite code or link.</span></li>
+      <li><strong>How do I switch families?</strong><span>Settings → Join another family with the new code. You always belong to one family.</span></li>
+      <li><strong>Widget not updating</strong><span>Open Focus once. The widget shows what’s next from your synced agenda.</span></li>
+      <li><strong>Ads &amp; Focus PRO</strong><span>Free may show ads. PRO removes them. Cancel in iPhone → Settings → [your name] → Subscriptions.</span></li>
+      <li><strong>Delete my account</strong><span>Settings → Delete account. Apple subscriptions are managed separately in system Settings.</span></li>
+      <li><strong>Microphone issues</strong><span>Use a real iPhone close to the mic. Check Microphone and Speech Recognition under iOS Settings → Focus.</span></li>
+    </ul>
+
+    <h2>Legal</h2>
+    <div class="legal-row">
+      <a href="privacy-en.html">Privacy<small>How we use data</small></a>
+      <a href="terms-en.html">Terms<small>Conditions of use</small></a>
+    </div>
+
+    <footer>Focus · Bundle ID <code>aec.focusia</code> · September 2026</footer>
   </div>
-
-  <h2>FAQ</h2>
-  <ul>
-    <li><strong>How do I sign in?</strong> Apple or Google only. There is no separate username/password.</li>
-    <li><strong>How do I invite family?</strong> In Settings, share the invite code or link.</li>
-    <li><strong>How do I switch families?</strong> Settings → Join another family (with the new code). You always belong to one family.</li>
-    <li><strong>Widget not updating?</strong> Open Focus once; the widget shows what’s next from your synced agenda.</li>
-    <li><strong>Ads.</strong> The Free plan may show ads. Focus PRO removes them.</li>
-    <li><strong>Cancel PRO.</strong> iPhone → Settings → [your name] → Subscriptions. You can also Restore Purchases from the paywall or Settings.</li>
-    <li><strong>Delete my account.</strong> Settings → Delete account. Apple subscriptions are managed separately in system Settings.</li>
-    <li><strong>Microphone issues.</strong> Try on a real iPhone; check Microphone and Speech Recognition for Focus in iOS Settings.</li>
-  </ul>
-
-  <h2>Privacy &amp; terms</h2>
-  <ul>
-    <li><a href="privacy-en.html">Privacy Policy</a></li>
-    <li><a href="terms-en.html">Terms of Use</a></li>
-  </ul>
-
-  <hr />
-  <p class="muted">We reply as soon as we can on business days. We will never ask for your Apple ID password or verification codes by email.</p>
 </body>
 </html>

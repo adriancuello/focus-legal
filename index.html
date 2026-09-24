@@ -3,35 +3,89 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Focus — Legal</title>
+  <title>Focus — Legal & Soporte</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Sora:wght@600;700&display=swap" rel="stylesheet" />
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; max-width: 740px; margin: 2rem auto; padding: 0 1.1rem 3rem; line-height: 1.55; color: #111; }
-    h1 { font-size: 1.7rem; }
-    h2 { font-size: 1.15rem; margin-top: 1.75rem; }
-    .muted { color: #666; font-size: 0.92rem; }
-    a { color: #0b57d0; }
-    ul { padding-left: 1.25rem; }
-    li { margin: 0.5rem 0; }
+    :root {
+      --bg0: #0a0d14;
+      --bg1: #10162a;
+      --card: rgba(255, 255, 255, 0.05);
+      --card-border: rgba(255, 255, 255, 0.1);
+      --text: #f4f7ff;
+      --muted: rgba(244, 247, 255, 0.58);
+      --blue: #00bfff;
+      --violet: #8c59ff;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Figtree", system-ui, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(900px 500px at 12% -8%, rgba(0, 191, 255, 0.24), transparent 55%),
+        radial-gradient(720px 440px at 100% 5%, rgba(140, 89, 255, 0.2), transparent 52%),
+        linear-gradient(165deg, var(--bg1), var(--bg0) 55%);
+      line-height: 1.55;
+    }
+    .wrap { width: min(820px, calc(100% - 2rem)); margin: 0 auto; padding: 2rem 0 3.5rem; }
+    .brand { display: inline-flex; align-items: center; gap: 0.55rem; font-family: "Sora", sans-serif; font-weight: 700; font-size: 1.15rem; letter-spacing: -0.02em; margin-bottom: 1.75rem; }
+    .brand-mark { width: 2rem; height: 2rem; border-radius: 0.55rem; background: linear-gradient(135deg, var(--blue), var(--violet)); display: grid; place-items: center; box-shadow: 0 0 28px rgba(0, 191, 255, 0.35); }
+    h1 { font-family: "Sora", sans-serif; font-size: clamp(2rem, 5vw, 2.8rem); letter-spacing: -0.03em; line-height: 1.1; margin: 0 0 0.6rem; }
+    .lede { color: var(--muted); margin: 0 0 2rem; max-width: 34rem; font-size: 1.05rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.85rem; }
+    a.card {
+      display: block;
+      padding: 1.2rem 1.25rem;
+      border-radius: 1.15rem;
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      color: var(--text);
+      text-decoration: none;
+      transition: border-color 0.15s ease, transform 0.15s ease, background 0.15s ease;
+    }
+    a.card:hover {
+      border-color: rgba(0, 191, 255, 0.45);
+      background: rgba(0, 191, 255, 0.08);
+      transform: translateY(-2px);
+    }
+    a.card h2 { font-family: "Sora", sans-serif; font-size: 1.05rem; margin: 0 0 0.35rem; letter-spacing: -0.02em; }
+    a.card p { margin: 0; color: var(--muted); font-size: 0.92rem; }
+    .section { margin-top: 2rem; }
+    .section h3 { font-family: "Sora", sans-serif; font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin: 0 0 0.75rem; }
+    footer { margin-top: 2.5rem; padding-top: 1.25rem; border-top: 1px solid rgba(255,255,255,0.08); color: var(--muted); font-size: 0.88rem; }
+    code { font-size: 0.85em; padding: 0.1rem 0.35rem; border-radius: 0.35rem; background: rgba(255,255,255,0.08); }
   </style>
 </head>
 <body>
-  <h1>Focus — Legal</h1>
-  <p class="muted">Family organizer · Bundle ID: aec.focusia · Updated: September 2026</p>
+  <div class="wrap">
+    <div class="brand"><span class="brand-mark" aria-hidden="true">✦</span> Focus</div>
+    <h1>Legal y soporte</h1>
+    <p class="lede">Organizador familiar para iPhone. Acá están la ayuda, la privacidad y los términos.</p>
 
-  <h2>Español</h2>
-  <ul>
-    <li><a href="support.html">Soporte / contacto</a></li>
-    <li><a href="privacy.html">Política de privacidad</a></li>
-    <li><a href="terms.html">Términos de uso</a></li>
-    <li><a href="join.html">Invitación a familia</a></li>
-  </ul>
+    <div class="section">
+      <h3>Español</h3>
+      <div class="grid">
+        <a class="card" href="support.html"><h2>Soporte</h2><p>Contacto y preguntas frecuentes</p></a>
+        <a class="card" href="privacy.html"><h2>Privacidad</h2><p>Cómo tratamos tus datos</p></a>
+        <a class="card" href="terms.html"><h2>Términos</h2><p>Condiciones de uso</p></a>
+        <a class="card" href="join.html"><h2>Unirse a familia</h2><p>Invitación con código</p></a>
+      </div>
+    </div>
 
-  <h2>English</h2>
-  <ul>
-    <li><a href="support-en.html">Support / contact</a></li>
-    <li><a href="privacy-en.html">Privacy Policy</a></li>
-    <li><a href="terms-en.html">Terms of Use</a></li>
-    <li><a href="join.html">Family invite</a></li>
-  </ul>
+    <div class="section">
+      <h3>English</h3>
+      <div class="grid">
+        <a class="card" href="support-en.html"><h2>Support</h2><p>Contact and FAQ</p></a>
+        <a class="card" href="privacy-en.html"><h2>Privacy</h2><p>How we handle data</p></a>
+        <a class="card" href="terms-en.html"><h2>Terms</h2><p>Conditions of use</p></a>
+        <a class="card" href="join.html"><h2>Join family</h2><p>Invite with code</p></a>
+      </div>
+    </div>
+
+    <footer>Bundle ID <code>aec.focusia</code> · September 2026</footer>
+  </div>
 </body>
 </html>
